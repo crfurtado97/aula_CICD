@@ -10,15 +10,15 @@ jobs:
 
     steps:
     -  name: clonar o repositório
-       uses: actions/checkiyt@v3
+       uses: actions/checkout@v3
 
     - name: Instalar compilador GCC
-      run: gcc Github.c -o programa
+      run: gcc GitHub.c -o programa
 
     - name:   Executar o programa
       run: ./programa
 
     - name: Executar tester automatizados
       run:  |
-        gcc -o teste teste.c
+        gcc -o teste Teste.c
         ./teste
