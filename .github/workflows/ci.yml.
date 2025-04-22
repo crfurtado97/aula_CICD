@@ -1,0 +1,24 @@
+name: CI para C
+
+
+on: 
+  push: 
+
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    -  name: clonar o repositório
+       uses: actions/checkiyt@v3
+
+    - name: Instalar compilador GCC
+      run: gcc Github.c -o programa
+
+    - name:   Executar o programa
+      run: ./programa
+
+    - name: Executar tester automatizados
+      run:  |
+        gcc -o teste teste.c
+        ./teste
